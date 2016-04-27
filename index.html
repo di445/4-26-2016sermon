@@ -1,7 +1,4 @@
-<!doctype html>
-<html class="no-js">
-
-<head>
+<html class="no-js gr__di445_github_io"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
     <meta charset="utf-8">
     <title>angular audio</title>
     <meta name="description" content="">
@@ -15,37 +12,20 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 
-<body>
+<body ng-app="ngAudioDemo" ng-controller="Demo" class="container ng-scope" data-gr-c-s-loaded="true">
 
-    <body ng-app=ngAudioDemo ng-controller=Demo class='container'>
+    
 
         <!-- Static navbar -->
         <div class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a ng-audio='audio/button-2.mp3' ng-audio-hover='audio/button-4.mp3' volume-hover=0.2 class="navbar-brand" ui-sref='home'>ngAudio</a>
+                    <a ng-audio="audio/button-2.mp3" ng-audio-hover="audio/button-4.mp3" volume-hover="0.2" class="navbar-brand ng-isolate-scope" ui-sref="home" href="#/">Go Back</a>
                 </div>
-                <div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li ng-audio='audio/button-3.mp3' ng-audio-hover='audio/button-4.mp3' volume-hover=0.2 ui-sref-active='active'><a ui-sref='docs'>Docs</a>
-                        </li>
-                        <li ng-audio='audio/button-1.mp3' ng-audio-hover='audio/button-4.mp3' volume-hover=0.2 ui-sref-active='active'><a ui-sref='audio.detail({id:"audio|song1.mp3"})'>Demo #1</a>
-                        </li>
-                        <!-- <li class="dropdown">
-                            <a ui-sref='audio' ui-sref-active='active' class="dropdown-toggle" data-toggle="dropdown">Sounds <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li ng-audio='audio/button-1.mp3' ng-repeat='audio in audios' ui-sref-active="active"><a ui-sref='audio.detail({id:audio.safeId})'>{{audio.id}}</a>
-                                </li>
-                            </ul>
-                        </li> -->
-                        <li ng-audio='audio/button-2.mp3' ng-audio-hover='audio/button-4.mp3' volume-hover=0.2><a href='https://github.com/danielstern/ngAudio' target=_blank>Github</a>
-                        </li>
-                    </ul>
-
-                </div>
+                
                 <!--/.nav-collapse -->
             </div>
             <!--/.container-fluid -->
@@ -53,9 +33,103 @@
 
        
 
-        <div ui-view></div>
+        <!-- uiView:  --><div ui-view="" class="ng-scope">
+
+
+
+	
+	
+	
+<p class="ng-scope"></p>
+<!-- ngInclude: 'partial/audioEditView.html' --><div ng-include="'partial/audioEditView.html'" class="ng-scope"><div class="col-md-offset-4 ng-scope">
+    <h3 class="ng-binding">Sermon Audio Sermon 222<!-- {{audio}} -->
+    </h3>
+    <!-- ngIf: audio.error -->
+    <!-- ngIf: !audio.canPlay -->
+</div>
+<!-- ngIf: !audio.error --><div ng-if="!audio.error" class="form-group col-md-8 col-md-offset-4 ng-scope">
+    <form class="form-inline ng-pristine ng-valid ng-submitted">
+        <div class="form-group col-xs-9">
+            <button class="btn btn-primary ng-binding" ng-click="audio.paused ? audio.play() : audio.pause()">Play</button>
+            <button class="btn btn-danger" ng-click="audio.restart()">Stop</button>
+            <button class="btn btn-neutral ng-binding" ng-click="audio.muting = !audio.muting">Mute</button>
+            <!-- <div class='checkbox pull-right'>
+                <label>
+                    <input type=checkbox ng-model=audio.loop ng-click='audio.loop = !audio.loop'>Loop
+                </label>
+
+            </div> -->
+        </div>
+
+            <div class="form-group col-xs-3">
+              <label>Loop
+                <select class="form-control input-small select ng-pristine ng-untouched ng-valid" ng-model="audio.loop" ng-options="value for value in [true,0,1,2,3,4,5]"><option value="boolean:true" label="true">true</option><option value="number:0" label="0" selected="selected">0</option><option value="number:1" label="1">1</option><option value="number:2" label="2">2</option><option value="number:3" label="3">3</option><option value="number:4" label="4">4</option><option value="number:5" label="5">5</option></select>
+              </label> 
+            </div>
+
+            <!-- <label> -->
+                <!-- Loop -->
+            <!-- </label> -->
+           
+
+    </form>
+</div><!-- end ngIf: !audio.error -->
+
+<form class="form-horizontal ng-pristine ng-valid ng-scope">
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="prependedtext">Current Time</label>
+        <div class="col-md-8">
+            <div class="input-group">
+                <span class="input-group-addon">Current Time</span>
+                <input class="form-control ng-pristine ng-untouched ng-valid" type="text" ng-model="audio.currentTime">
+            </div>
+            <p class="help-block">
+                <strong>audioObject.currentTime:</strong>The current time of the object in seconds
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="prependedtext">Progress</label>
+        <div class="col-md-8">
+            <div class="input-group">
+                <span class="input-group-addon">Progress</span>
+                <input class="form-control ng-pristine ng-untouched ng-valid" type="range" min="0" max="1" step="0.01" ng-model="audio.progress">
+            </div>
+            <p class="help-block">
+                <strong>audioObject.progress:</strong>The progress of the object as a percentage (0-1);
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="prependedtext">Volume</label>
+        <div class="col-md-8">
+            <div class="input-group">
+                <span class="input-group-addon">Volume</span>
+                <input class="form-control ng-pristine ng-untouched ng-valid" type="range" min="0" max="1" step="0.01" ng-model="audio.volume">
+            </div>
+            <strong>audioObject.volume:</strong>The volume of the object as a percentage (0-1);
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="prependedtext">Playback Rate</label>
+        <div class="col-md-8">
+            <div class="input-group">
+                <span class="input-group-addon">Playback Rate</span>
+                <input class="form-control ng-pristine ng-untouched ng-valid" type="range" min="0.5" max="1.5" step="0.01" ng-model="audio.playbackRate">
+            </div>
+            <strong>audioObject.playbackRate:</strong>The speed the audio plays at. (0.5 - 1.5);
+        </div>
+    </div>
+</form>
+
+<!-- <div class='hidden-sm' ng-include="'partial/audioTableView.html'"></div> -->
+</div>
+
+
+
+<p class="ng-scope"></p></div>
         
-    </body>
+    
 
 
 
@@ -74,12 +148,13 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
-</body>
 
-</html>
+
+
 
 
 <script>
 </script>
 
 
+</body></html>
