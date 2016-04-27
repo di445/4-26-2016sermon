@@ -56,7 +56,7 @@ angular.module("ngAudioDemo", ['ngAudio', 'ui.router'])
 .value("songRemember",{})
     .controller('Demo', function($scope, ngAudio) {
         $scope.audios = [
-            ngAudio.load('audio/song1.mp3'),
+            ngAudio.load('https://ia601307.us.archive.org/24/items/20151004SermonMarkBoggess/2015-10-04%20Sermon%20-%20Mark%20Boggess.mp3'),
             ngAudio.load('audio/song2.mp3'),
             ngAudio.load('audio/song3.mp3'),
             ngAudio.load('audio/daniel_stern_robot_hitchiker.mp3'),
