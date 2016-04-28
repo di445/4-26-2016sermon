@@ -62,3 +62,4 @@ angular.module("ngAudioDemo", ['ngAudio', 'ui.router'])
             ngAudio.load('audio/daniel_stern_robot_hitchiker.mp3'),
         ]
     })
+  
