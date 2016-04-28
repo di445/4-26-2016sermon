@@ -6,7 +6,7 @@ angular.module("ngAudioDemo", ['ngAudio', 'ui.router'])
                 url: "/",
                 templateUrl: "partial/home.html",
                 controller: function($scope, ngAudio, songRemember) {
-                    var url = 'http://mediastorage.cloversites.com/firstchristianchurchoftitusville/media_player/2016-04-24%20Sermon%20-%20Mark%20Boggess.mp3';
+                    var url = '/audio/4-26-16.mp3';
                     
                     if (songRemember[url]) {
                         $scope.audio = songRemember[url];
